@@ -1,4 +1,6 @@
 nuodb-puppet
 ============
 
-Puppet module for NuoDB
+Puppet module for NuoDB.
+
+Under development.
