@@ -14,7 +14,13 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
     #vb.gui = true
     vb.customize ["modifyvm", :id, "--memory", "1024"]
   end
-
+  
+  config.vm.network "forwarded_port", guest: 8080, host: 8080
+  config.vm.network "forwarded_port", guest: 8888, host: 8888
+  (48004...48020).each do |port|
+    config.vm.network "forwarded_port", guest: port, host: port
+  end
+  
   config.vm.provision :puppet do |puppet|
     puppet.manifests_path = "vagrant"
     puppet.manifest_file  = "site.pp"
