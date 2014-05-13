@@ -1,0 +1,7 @@
+forge "http://forge.puppetlabs.com"
+
+mod "java",
+  :git => "https://github.com/puppetlabs/puppetlabs-java.git"
+  
+mod "wget",
+  :git => "https://github.com/maestrodev/puppet-wget.git"
